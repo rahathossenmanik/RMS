@@ -6,11 +6,6 @@ use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
-
-    public function menu(){
-        return view("menu");
-    }
-
     /**
      * Display a listing of the resource.
      *
