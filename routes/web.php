@@ -19,6 +19,9 @@ Route::get("/redirects",'App\Http\Controllers\HomeController@redirects');
 
 Route::get("/menu",'App\Http\Controllers\MenuController@menu');
 
+Route::get("/cart",'App\Http\Controllers\CartController@cart');
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
