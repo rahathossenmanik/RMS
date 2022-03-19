@@ -6,7 +6,7 @@
     <br>
     <br>
     <br>
-<table id="cart" class="table table-hover table-condensed">
+<table id="cart" class="table table-hover table-condensed container">
     <thead>
         <tr>
             <th style="width:50%">Product</th>

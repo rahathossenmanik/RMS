@@ -40,7 +40,7 @@
     
     
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky">
+    <header class="header-area">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -57,17 +57,8 @@
                            	
                             <li class="scroll-to-section"><a href="/menu">Menu</a></li>
                             <li class="scroll-to-section"><a href="#chefs">Chefs</a></li> 
-                            <li class="submenu">
-                                <a href="javascript:;">Features</a>
-                                <ul>
-                                    <li><a href="#">Features Page 1</a></li>
-                                    <li><a href="#">Features Page 2</a></li>
-                                    <li><a href="#">Features Page 3</a></li>
-                                    <li><a href="#">Features Page 4</a></li>
-                                </ul>
-                            </li>
-                            <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
                             <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li>
+                            <li><a href="/cart"><i class="fa fa-shopping-cart"></i></a></li>
                             <li>
                                 @if (Route::has('login'))
                                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -85,7 +76,7 @@
                                     @endauth
                                 </div>
                             @endif
-                            </li> 
+                            </li>
                         </ul>        
                         
                         <!-- ***** Menu End ***** -->
@@ -96,7 +87,7 @@
     </header>
     <!-- ***** Header Area End ***** -->
 
-    <div class="container">
+    <div>
         @yield('page-content')
     </div>
 
