@@ -121,9 +121,11 @@
                               <div class="main-text-button">
                                   <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
                               </div>
+                              
                             </div>
                         </div>
                     </div>
+
                     <div class="item">
                         <div class='card card2'>
                             <div class="price"><h6>৳399</h6></div>
