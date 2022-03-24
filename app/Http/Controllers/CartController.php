@@ -4,13 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class MenuController extends Controller
+class CartController extends Controller
 {
-
-    
-    public function menu(){
-        return view("menu");
+    public function cart(){
+        return view("cart");
     }
+    
     
     /**
      * Display a listing of the resource.
