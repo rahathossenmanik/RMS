@@ -42,22 +42,20 @@
     <!-- ***** Header Area Start ***** -->
     <header class="header-area">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="{{url('home')}}" class="logo">
-                            <img src="{{ asset('assets/images/logo.png')}}" align="klassy cafe html template">
+                            <img src="{{ asset('assets/images/logo.png')}}">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="#about">About</a></li>
+                            <li class="scroll-to-section"><a href="/">Home</a></li>
+                            <li class="scroll-to-section"><a href="/#about">About</a></li>
                            	
                             <li class="scroll-to-section"><a href="/menu">Menu</a></li>
-                            <li class="scroll-to-section"><a href="#chefs">Chefs</a></li> 
-                            <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li>
+                            <li class="scroll-to-section"><a href="/#chefs">Chefs</a></li> 
+                            <li class="scroll-to-section"><a href="/#reservation">Contact Us</a></li>
                             <li><a href="/cart"><i class="fa fa-shopping-cart"></i></a></li>
                             <li>
                                 @if (Route::has('login'))
@@ -81,8 +79,6 @@
                         
                         <!-- ***** Menu End ***** -->
                     </nav>
-                </div>
-            </div>
         </div>
     </header>
     <!-- ***** Header Area End ***** -->

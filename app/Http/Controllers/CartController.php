@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Cart;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -28,7 +28,7 @@ class CartController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -39,7 +39,15 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'  => 'required|max:255',
+            'price'  => 'required|numeric',
+        ]);
+
+        Cart::create($request->all());
+
+        return redirect()->route('cart');
+
     }
 
     /**

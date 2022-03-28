@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class MenuController extends Controller
 {
 
     
     public function menu(){
-        return view("menu");
+        $products = Product::all();
+        return view('menu', compact('products'));
     }
     
     /**
