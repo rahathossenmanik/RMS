@@ -20,10 +20,10 @@ Route::get("/redirects",'App\Http\Controllers\HomeController@redirects');
 
 Route::get("/menu",'App\Http\Controllers\MenuController@menu');
 
-Route::get("/cart",'App\Http\Controllers\CartController@cart');
+Route::get("/cart", [CartController::class, 'index'])->name('cart');
 
 
-Route::get('/cart', [CartController::class, 'store'])->name('cart.store');
+Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

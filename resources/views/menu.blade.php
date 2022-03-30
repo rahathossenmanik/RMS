@@ -11,7 +11,7 @@
                     <td><h2>{{$product->name}}</h2>
                     <h4>${{$product->price}}</h4>
                     <p>{{$product->description}}</p>
-                    <form method="get" action="{{route('cart.store')}}">
+                    <form method="post" action="{{route('cart.store')}}">
                         <button class="btn btn-success">Add to Cart</button>
                     </form>
                 </td>
