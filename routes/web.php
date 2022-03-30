@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,12 +20,13 @@ Route::get("/", 'App\Http\Controllers\HomeController@index');
 
 Route::get("/redirects",'App\Http\Controllers\HomeController@redirects');
 
-Route::get("/menu",'App\Http\Controllers\MenuController@menu');
+#Route::get("/menu",'App\Http\Controllers\MenuController@menu');
+Route::get('/menu', [MenuController::class, 'menu'])->name('menu');
 
 Route::get("/cart", [CartController::class, 'index'])->name('cart');
 
 
-Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
+Route::post('/menu/{product}', [CartController::class, 'store'])->name('cart.store');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

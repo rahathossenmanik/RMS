@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Product;
 use App\Models\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
@@ -35,16 +37,19 @@ class CartController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        $request->validate([
-            'name'  => 'required|max:255',
-            'price'  => 'required|numeric',
+        $product = Product::find($id);
+        DB::table('carts')->insert([
+            'product_id' => $product->id,    
+            'name' => $product->name,
+            'price' => $product->price,
+            'quantity' => 1,
+            'subtotal' => $product->price
         ]);
 
-        Cart::create($request->all());
 
-        return redirect()->route('cart.store');
+        return redirect()->route('menu');
 
     }
 
