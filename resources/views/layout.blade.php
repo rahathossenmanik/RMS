@@ -24,9 +24,11 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/lightbox.css')}}">
 
+    <script src="{{ asset('assets/js/angular.min.js')}}"></script>
+
     </head>
     
-    <body>
+    <body ng-app="">
     
     <!-- ***** Preloader Start ***** -->
     <div id="preloader">

@@ -29,7 +29,7 @@ Route::get("/cart", [CartController::class, 'index'])->name('cart');
 Route::post('/menu/{product}', [CartController::class, 'store'])->name('cart.store');
 Route::post('/cart/{product}', [CartController::class, 'destroy'])->name('cart.destroy');
 
-Route::get('/checkout/{total}', [CartController::class, 'checkout'])->name('cart.checkout');
+Route::post('/checkout/{total}', [CartController::class, 'checkout'])->name('cart.checkout');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

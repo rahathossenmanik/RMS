@@ -107,6 +107,6 @@ class CartController extends Controller
 
     public function checkout($total)
     {
-        return view("checkout");
+        return view("checkout", compact('total'));
     }
 }
