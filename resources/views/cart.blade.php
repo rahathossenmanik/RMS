@@ -42,7 +42,10 @@
         <tr>
             <td colspan="5" class="text-right">
                 <a href="{{ url('/menu') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
-                <button class="btn btn-success">Checkout</button>
+                <form style="display:inline" method="get" action="{{route('cart.checkout', $total)}}">
+                    @csrf
+                    <button class="btn btn-success">Checkout</button>
+                </form>
             </td>
         </tr>
     </tfoot>

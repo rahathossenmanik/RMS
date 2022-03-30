@@ -101,4 +101,12 @@ class CartController extends Controller
 
         return redirect()->route('cart');
     }
+
+
+
+
+    public function checkout($total)
+    {
+        return view("checkout");
+    }
 }
