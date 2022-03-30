@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.css')}}">
 
-    <link rel="stylesheet" href="{{ asset('assets/css/templatemo-klassy-cafe.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/css-library.css')}}">
 
     <link rel="stylesheet" href="{{ asset('assets/css/owl-carousel.css')}}">
 
@@ -40,12 +40,12 @@
     
     
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area">
+    <header class="header-area" style="z-index:1000">
         <div class="container">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="{{url('home')}}" class="logo">
-                            <img src="{{ asset('assets/images/logo.png')}}">
+                            <img width="100px" src="{{ asset('assets/images/logo.png')}}">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->

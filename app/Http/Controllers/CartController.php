@@ -18,7 +18,8 @@ class CartController extends Controller
      */
     public function index()
     {
-        return view("cart");
+        $carts = Cart::all();
+        return view("cart", compact('carts'));
     }
 
     /**
@@ -95,6 +96,9 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Cart::find($id);
+        $product->delete();
+
+        return redirect()->route('cart');
     }
 }
