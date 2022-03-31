@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/lightbox.css')}}">
 
     <script src="{{ asset('assets/js/angular.min.js')}}"></script>
+    <script src="{{ asset('assets/js/bKash-checkout.js')}}"></script>
+    <script src="{{ asset('assets/js/bKash-checkout-sandbox.js')}}"></script>
 
     </head>
     
