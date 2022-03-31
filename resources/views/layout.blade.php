@@ -87,7 +87,7 @@
     </header>
     <!-- ***** Header Area End ***** -->
 
-    <div>
+    <div style="min-height:750px">
         @yield('page-content')
     </div>
 

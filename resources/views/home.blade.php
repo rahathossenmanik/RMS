@@ -294,7 +294,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-12">
+                        <div style="text-align:center;" class="col-lg-12">
                             <section class='tabs-content'>
                                 <article id='tabs-1'>
                                     <div class="row">
@@ -532,6 +532,9 @@
                                     </div>
                                 </article>   
                             </section>
+                            <br>
+                            <a href="/menu"><input style="color:#fff; background-color:#FB5849; font-size:20px;"
+                            class="btn" type="submit" value="Browse All"></a>
                         </div>
                     </div>
                 </div>
