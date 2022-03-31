@@ -41,13 +41,24 @@ class CartController extends Controller
     public function store(Request $request, $id)
     {
         $product = Product::find($id);
-        DB::table('carts')->insert([
-            'product_id' => $product->id,    
-            'name' => $product->name,
-            'price' => $product->price,
-            'quantity' => 1,
-            'subtotal' => $product->price
-        ]);
+        $quantity = 1;
+        if (Cart::where('product_id', '=', $id)->exists()) {
+            $quant = Cart::where('product_id', '=', $id)->first()->value('quantity');
+            $quantity = $quantity + (int) $quant;
+
+            DB::table('carts')->where('product_id', '=', $id)->update([
+                'quantity' => $quantity,
+                'subtotal' => $quantity*$product->price
+            ]);
+        }else{
+            DB::table('carts')->insert([
+                'product_id' => $product->id,    
+                'name' => $product->name,
+                'price' => $product->price,
+                'quantity' => $quantity,
+                'subtotal' => $quantity*$product->price
+            ]);
+        }
 
 
         return redirect()->route('menu');
