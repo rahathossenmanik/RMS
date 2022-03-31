@@ -13,18 +13,27 @@
     <input ng-model="myVar" type="radio" id="bkash" name="bkash" value="bkash">
     <label for="bkash"><img style="max-width:150px;"  src="{{ asset('assets/images/bkash.png')}}"></label><br><br><br>
     <div ng-switch="myVar">
-        <div ng-switch-when="cod">
-            <form style="display:inline"  action="mailto:kawser.cse.ru@gmail.com" method="post" enctype="text/plain">
-            @csrf
-                <input class="btn btn-success" type="submit" value="Place Order">
-            </form>
-        </div>
-        <div ng-switch-when="bkash">
-            <form style="display:inline"  action="mailto:kawser.cse.ru@gmail.com" method="post" enctype="text/plain">
-            @csrf
-                <input class="btn btn-success" type="submit" value="Pay Now">
-            </form>
-        </div>
+        @if (Auth::check())
+            <div ng-switch-when="cod">
+                <form style="display:inline"  action="mailto:kawser.cse.ru@gmail.com" method="post" enctype="text/plain">
+                @csrf
+                    <input class="btn btn-success" type="submit" value="Place Order">
+                </form>
+            </div>
+            <div ng-switch-when="bkash">
+                <form style="display:inline"  action="mailto:kawser.cse.ru@gmail.com" method="post" enctype="text/plain">
+                @csrf
+                    <input class="btn btn-success" type="submit" value="Pay Now">
+                </form>
+            </div>
+        @else
+            <div ng-switch-when="cod">
+                <a href="/login"><input class="btn btn-success" type="submit" value="Log in"></a>
+            </div>
+            <div ng-switch-when="bkash">
+                <a href="/login"><input class="btn btn-success" type="submit" value="Log in"></a>
+            </div>
+        @endif
     </div>
 </form>
 </div>
