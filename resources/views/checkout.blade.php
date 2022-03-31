@@ -21,10 +21,10 @@
                 </form>
             </div>
             <div ng-switch-when="bkash">
-                <form style="display:inline"  action="mailto:kawser.cse.ru@gmail.com" method="post" enctype="text/plain">
-                @csrf
-                    <input class="btn btn-success" type="submit" value="Pay Now">
-                </form>
+                <button class="btn btn-success" id="bKash_button" onclick="BkashPayment()">
+                    Pay with bKash
+                </button>
+                @include('bkash-script')
             </div>
         @else
             <div ng-switch-when="cod">
