@@ -9,7 +9,7 @@
                 <td>
                     <img src="{{$product->image}}" height=150px width=150px></td>
                     <td><h2>{{$product->name}}</h2>
-                    <h4>${{$product->price}}</h4>
+                    <h4>৳{{$product->price}}</h4>
                     <p>{{$product->description}}</p>
                     <form method="post" action="{{route('cart.store', $product)}}">
                         @csrf
