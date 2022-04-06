@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'smtp'),
+    'default' => env('mailgun', 'smtp'),
 
     /*
     |--------------------------------------------------------------------------
@@ -92,9 +92,11 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'rahathossenmanik@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'RMS Admin'),
     ],
+
+    'reply_to' => ['address' => 'rahathossenmanik@gmail.com', 'name' => 'RMS Admin'],
 
     /*
     |--------------------------------------------------------------------------

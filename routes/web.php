@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ProductController;
+
+use App\Http\Controllers\ShipmentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +30,7 @@ Route::get("/cart", [CartController::class, 'index'])->name('cart');
 
 Route::post('/menu/{product}', [CartController::class, 'store'])->name('cart.store');
 Route::post('/cart/{product}', [CartController::class, 'destroy'])->name('cart.destroy');
+Route::post('/mails/shipped/{total}', [CartController::class, 'store'])->name('mails.shipped');
 
 Route::post('/checkout/{total}', [CartController::class, 'checkout'])->name('cart.checkout');
 

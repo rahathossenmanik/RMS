@@ -15,7 +15,7 @@
     <div ng-switch="myVar">
         @if (Auth::check())
             <div ng-switch-when="cod">
-                <form style="display:inline"  action="mailto:kawser.cse.ru@gmail.com" method="post" enctype="text/plain">
+                <form style="display:inline"  method="post" action="{{route('mails.shipped', $total)}}">
                 @csrf
                     <input class="btn btn-success" type="submit" value="Place Order">
                 </form>
