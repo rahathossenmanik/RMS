@@ -30,7 +30,7 @@ Route::get("/cart", [CartController::class, 'index'])->name('cart');
 
 Route::post('/menu/{product}', [CartController::class, 'store'])->name('cart.store');
 Route::post('/cart/{product}', [CartController::class, 'destroy'])->name('cart.destroy');
-Route::post('/mails/shipped/{total}', [CartController::class, 'store'])->name('mails.shipped');
+Route::post('/mails/shipped/{total}', [ShipmentController::class, 'send'])->name('mails.shipped');
 
 Route::post('/checkout/{total}', [CartController::class, 'checkout'])->name('cart.checkout');
 

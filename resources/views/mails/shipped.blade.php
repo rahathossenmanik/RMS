@@ -8,7 +8,6 @@
     <br>
     <h1>Your Order have been Placed Successfully</h1><br>
     <div>
-    Order Amount: {{ $order->price }}
 </div>
 </div>
 @endsection
