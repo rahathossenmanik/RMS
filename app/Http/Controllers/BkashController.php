@@ -160,4 +160,23 @@ class BkashController extends Controller
 
         return response()->json(['status' => false]);
     }
+    public function ssl()
+    {
+
+        $total=Session::get('total');
+
+        //return $total;
+
+        return view('exampleEasycheckout',compact('total'));
+
+
+    }
+    public function ssl2()
+    {
+
+        return view('exampleHosted');
+
+
+    }
+    
 }

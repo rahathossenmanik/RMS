@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ProductController;
-
+use App\Http\Controllers\BkashController;
 use App\Http\Controllers\ShipmentController;
+use App\Http\Controllers\SslCommerzPaymentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,6 +40,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::get('ssl/pay', [BkashController::class, 'ssl']);
+Route::get('ssl/pay2', [BkashController::class, 'ssl2']);
 
 Route::group(['middleware' => ['customAuth']], function () {
 
@@ -51,6 +54,22 @@ Route::group(['middleware' => ['customAuth']], function () {
 
     // Refund Routes for bKash
     Route::get('bkash/refund', 'BkashRefundController@index')->name('bkash-refund');
+    
     Route::post('bkash/refund', 'BkashRefundController@refund')->name('bkash-refund');
 
 });
+
+
+// SSLCOMMERZ Start
+Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
+Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
+
+Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
+Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+
+Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
+//SSLCOMMERZ END

@@ -48,7 +48,7 @@
         <div class="container">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="{{url('home')}}" class="logo">
+                        <a href="/" class="logo">
                             <img width="100px" src="{{ asset('assets/images/logo.png')}}">
                         </a>
                         <!-- ***** Logo End ***** -->

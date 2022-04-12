@@ -21,14 +21,16 @@
                 </form>
             </div>
             <div ng-switch-when="bkash">
-                <button class="btn btn-success" id="bKash_button" onclick="BkashPayment()">
-                    Pay with bKash
-                </button>
+            <?php
+                Session::put('total',$total);
+            ?>
+            <a href="/ssl/pay"><input class="btn btn-success" type="submit" value="Pay with Bkash"></a>
+                 
                 @include('bkash-script')
             </div>
         @else
             <div ng-switch-when="cod">
-                <a href="/login"><input class="btn btn-success" type="submit" value="Log in"></a>
+               
             </div>
             <div ng-switch-when="bkash">
                 <a href="/login"><input class="btn btn-success" type="submit" value="Log in"></a>
